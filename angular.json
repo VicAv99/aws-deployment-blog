@@ -25,7 +25,10 @@
               "apps/dad-jokes/src/favicon.ico",
               "apps/dad-jokes/src/assets"
             ],
-            "styles": ["apps/dad-jokes/src/styles.scss"],
+            "styles": [
+              "apps/dad-jokes/src/styles.scss",
+              "libs/theme/theme.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +86,10 @@
               "apps/dad-jokes/tsconfig.app.json",
               "apps/dad-jokes/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/dad-jokes/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/dad-jokes/**/*"
+            ]
           }
         },
         "test": {
@@ -118,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/dad-jokes-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/dad-jokes-e2e/**/*"]
+            "tsConfig": [
+              "apps/dad-jokes-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/dad-jokes-e2e/**/*"
+            ]
           }
         }
       }
@@ -137,7 +148,10 @@
               "libs/core-data/tsconfig.lib.json",
               "libs/core-data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/core-data/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/core-data/**/*"
+            ]
           }
         },
         "test": {
@@ -169,7 +183,10 @@
               "libs/material/tsconfig.lib.json",
               "libs/material/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/material/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/material/**/*"
+            ]
           }
         },
         "test": {
@@ -201,7 +218,10 @@
               "libs/random/tsconfig.lib.json",
               "libs/random/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/random/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/random/**/*"
+            ]
           }
         },
         "test": {
@@ -233,7 +253,10 @@
               "libs/search/tsconfig.lib.json",
               "libs/search/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/search/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/search/**/*"
+            ]
           }
         },
         "test": {

@@ -1,0 +1,82 @@
+@import 'variables';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$jokes-primary: (
+  50: #ffffff,
+  100: #ffffff,
+  200: #ffffff,
+  300: #ffffff,
+  400: #ffffff,
+  500: $primary,
+  600: #f2f2f2,
+  700: #e6e6e6,
+  800: #d9d9d9,
+  900: #cccccc,
+  A100: #ffffff,
+  A200: #f4f4f4,
+  A400: #e6e6e6,
+  A700: #d9d9d9,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $text-base,
+    400: $text-base,
+    500: $text-base,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $text-base,
+    A200: white,
+    A400: white,
+    A700: white,
+  ),
+);
+
+$jokes-accent: (
+  50: #4dffe4,
+  100: #33ffe0,
+  200: #1affdd,
+  300: #00ffd9,
+  400: #00e6c3,
+  500: $accent,
+  600: #00ccad,
+  700: #00b398,
+  800: #009982,
+  900: #00806c,
+  A100: #ccfff7,
+  A200: #66ffe8,
+  A400: #00806c,
+  A700: #004d41,
+  contrast: (
+    50: $black-87-opacity,
+    100: $black-87-opacity,
+    200: $black-87-opacity,
+    300: $black-87-opacity,
+    400: $black-87-opacity,
+    500: white,
+    600: white,
+    700: white,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $black-87-opacity,
+    A200: white,
+    A400: white,
+    A700: white,
+  ),
+);
+
+$jokes-primary: mat-palette($jokes-primary, A400);
+$jokes-accent: mat-palette($jokes-accent);
+$jokes-theme: mat-light-theme($jokes-primary, $jokes-accent);
+
+@include angular-material-theme($jokes-theme);
+
+$jokes-typography: mat-typography-config(
+  $font-family: $font-family,
+);
+
+@include angular-material-typography($jokes-typography);
