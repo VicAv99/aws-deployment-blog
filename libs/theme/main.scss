@@ -17,6 +17,10 @@ body {
   color: $text-base !important;
 }
 
+.fullpage-height {
+  height: calc(100% - 50px) !important;
+}
+
 .text-accent {
   color: $accent !important;
 }
