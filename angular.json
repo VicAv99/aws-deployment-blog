@@ -86,10 +86,7 @@
               "apps/dad-jokes/tsconfig.app.json",
               "apps/dad-jokes/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/dad-jokes/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/dad-jokes/**/*"]
           }
         },
         "test": {
@@ -124,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/dad-jokes-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/dad-jokes-e2e/**/*"
-            ]
+            "tsConfig": ["apps/dad-jokes-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/dad-jokes-e2e/**/*"]
           }
         }
       }
@@ -148,10 +140,7 @@
               "libs/core-data/tsconfig.lib.json",
               "libs/core-data/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/core-data/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/core-data/**/*"]
           }
         },
         "test": {
@@ -183,10 +172,7 @@
               "libs/material/tsconfig.lib.json",
               "libs/material/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/material/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/material/**/*"]
           }
         },
         "test": {
@@ -196,6 +182,38 @@
             "tsConfig": "libs/material/tsconfig.spec.json",
             "passWithNoTests": true,
             "setupFile": "libs/material/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "ui-toolbar": {
+      "projectType": "library",
+      "root": "libs/ui-toolbar",
+      "sourceRoot": "libs/ui-toolbar/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-toolbar/tsconfig.lib.json",
+              "libs/ui-toolbar/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-toolbar/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-toolbar/jest.config.js",
+            "tsConfig": "libs/ui-toolbar/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/ui-toolbar/src/test-setup.ts"
           }
         }
       },

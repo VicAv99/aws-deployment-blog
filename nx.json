@@ -18,12 +18,7 @@
       "runner": "@nrwl/nx-cloud",
       "options": {
         "accessToken": "ODRhNTc0ZjktMzY5Zi00ZjdiLTg1OTQtOTdmODhlZjVlZGZifHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "e2e"],
         "canTrackAnalytics": false,
         "showUsageWarnings": true
       }
@@ -35,14 +30,15 @@
     },
     "dad-jokes-e2e": {
       "tags": [],
-      "implicitDependencies": [
-        "dad-jokes"
-      ]
+      "implicitDependencies": ["dad-jokes"]
     },
     "core-data": {
       "tags": []
     },
     "material": {
+      "tags": []
+    },
+    "ui-toolbar": {
       "tags": []
     }
   }
