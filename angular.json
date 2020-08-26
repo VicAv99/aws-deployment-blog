@@ -1,8 +1,260 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "dad-jokes": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/dad-jokes",
+      "sourceRoot": "apps/dad-jokes/src",
+      "prefix": "workspace",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/dad-jokes",
+            "index": "apps/dad-jokes/src/index.html",
+            "main": "apps/dad-jokes/src/main.ts",
+            "polyfills": "apps/dad-jokes/src/polyfills.ts",
+            "tsConfig": "apps/dad-jokes/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/dad-jokes/src/favicon.ico",
+              "apps/dad-jokes/src/assets"
+            ],
+            "styles": ["apps/dad-jokes/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/dad-jokes/src/environments/environment.ts",
+                  "with": "apps/dad-jokes/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "dad-jokes:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "dad-jokes:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "dad-jokes:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/dad-jokes/tsconfig.app.json",
+              "apps/dad-jokes/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/dad-jokes/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/dad-jokes/jest.config.js",
+            "tsConfig": "apps/dad-jokes/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/dad-jokes/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "dad-jokes-e2e": {
+      "root": "apps/dad-jokes-e2e",
+      "sourceRoot": "apps/dad-jokes-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/dad-jokes-e2e/cypress.json",
+            "tsConfig": "apps/dad-jokes-e2e/tsconfig.e2e.json",
+            "devServerTarget": "dad-jokes:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "dad-jokes:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/dad-jokes-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/dad-jokes-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "core-data": {
+      "projectType": "library",
+      "root": "libs/core-data",
+      "sourceRoot": "libs/core-data/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core-data/tsconfig.lib.json",
+              "libs/core-data/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/core-data/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core-data/jest.config.js",
+            "tsConfig": "libs/core-data/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/core-data/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "material": {
+      "projectType": "library",
+      "root": "libs/material",
+      "sourceRoot": "libs/material/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/material/tsconfig.lib.json",
+              "libs/material/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/material/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/material/jest.config.js",
+            "tsConfig": "libs/material/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/material/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "random": {
+      "projectType": "library",
+      "root": "libs/random",
+      "sourceRoot": "libs/random/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/random/tsconfig.lib.json",
+              "libs/random/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/random/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/random/jest.config.js",
+            "tsConfig": "libs/random/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/random/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "search": {
+      "projectType": "library",
+      "root": "libs/search",
+      "sourceRoot": "libs/search/src",
+      "prefix": "workspace",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/search/tsconfig.lib.json",
+              "libs/search/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/search/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/search/jest.config.js",
+            "tsConfig": "libs/search/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/search/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
+    "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
     "@nrwl/workspace": {
@@ -38,6 +290,14 @@
       "library": {
         "linter": "tslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
     }
-  }
+  },
+  "defaultProject": "dad-jokes"
 }
