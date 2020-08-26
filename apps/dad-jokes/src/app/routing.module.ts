@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RandomComponent } from '@workspace/random';
-import { SearchComponent } from '@workspace/search';
+import { RandomComponent } from './random/random.component';
+import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/random', pathMatch: 'full' },

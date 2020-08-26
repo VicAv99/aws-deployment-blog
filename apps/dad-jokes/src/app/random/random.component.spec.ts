@@ -8,9 +8,9 @@ describe('RandomComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RandomComponent ]
+      declarations: [RandomComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
