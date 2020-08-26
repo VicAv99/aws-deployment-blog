@@ -1,0 +1,10 @@
+@import 'libs/theme/variables';
+
+mat-toolbar {
+  position: relative;
+  z-index: 99;
+  height: $toolbar-height;
+  .active {
+    color: $accent;
+  }
+}

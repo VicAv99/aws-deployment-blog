@@ -1,1 +1,9 @@
-<p>toolbar works!</p>
+<mat-toolbar class="d-flex justify-content-between mat-elevation-z2">
+  <h2>Dad Jokes</h2>
+  <nav>
+    <a mat-button *ngFor="let link of links" [routerLink]="[link.path]" routerLinkActive="active">
+      <mat-icon>{{link.icon}}</mat-icon>
+      {{link.label}}
+    </a>
+  </nav>
+</mat-toolbar>
