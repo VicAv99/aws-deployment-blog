@@ -16,3 +16,15 @@ body {
   font-family: $font-family !important;
   color: $text-base !important;
 }
+
+.text-accent {
+  color: $accent !important;
+}
+
+@each $font-size in $font-sizes {
+  $i: index($font-sizes, $font-size);
+
+  .fs-#{$i} {
+    font-size: $spacer * $font-size !important;
+  }
+}
