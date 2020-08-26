@@ -1,17 +1,16 @@
 <h2 class="fs-6">Random Dad Joke:</h2>
 
 <mat-card>
-  <mat-card-content>
-    <p class="text-muted text-monospace">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione nobis inventore esse consequatur odio? Tempore
-      ducimus magnam, explicabo minima voluptas iure laboriosam porro tenetur nesciunt quibusdam placeat quia,
-      laudantium
-      nemo?
-    </p>
-  </mat-card-content>
-  <mat-divider></mat-divider>
-  <mat-card-actions class="d-flex">
-    <button mat-button class="flex-fill">Copy Joke</button>
-    <button mat-button color='accent' class="flex-fill">Generate New</button>
-  </mat-card-actions>
+  <ng-container *ngIf="joke$ | async as joke">
+    <mat-card-content>
+      <p class="text-muted text-monospace">
+        {{joke.joke}}
+      </p>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions class="d-flex">
+      <button mat-button class="flex-fill" (click)="copy(joke.joke)">Copy Joke</button>
+      <button mat-button color='accent' class="flex-fill" (click)="getRandomJoke()">Generate New</button>
+    </mat-card-actions>
+  </ng-container>
 </mat-card>

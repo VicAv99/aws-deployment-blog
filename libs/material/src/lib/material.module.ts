@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -27,6 +28,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 @NgModule({
   exports: [
     BrowserAnimationsModule,
+    ClipboardModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
